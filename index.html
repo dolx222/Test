@@ -36,6 +36,20 @@ html,body{overscroll-behavior-y:contain}#home{touch-action:manipulation}button:d
   height: 24px;
   animation: none;
 }
+/* 보기 모드: 나의정보 터치 반응 차단 */
+.app:not(.editing) #layoutTrigger {
+  pointer-events: none;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 편집 모드: 다시 터치 가능 */
+.app.editing #layoutTrigger {
+  pointer-events: auto;
+  cursor: pointer;
+}
 </style></head>
 <body>
 <main class="app">
